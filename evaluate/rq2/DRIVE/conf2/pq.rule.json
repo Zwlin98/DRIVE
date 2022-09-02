@@ -1,0 +1,106 @@
+[
+  {
+    "meaning": "pip install MUST use --no-cache-dir to avoid wasting space",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[pip]",
+      "CMD-[pip]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[pip]-ARG-[--no-cache-dir]"
+    ],
+    "hadolint": "DL3042"
+  },
+  {
+    "meaning": "pip install MUST use --no-cache-dir to avoid wasting space",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[pip3]",
+      "CMD-[pip3]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[pip3]-ARG-[--no-cache-dir]"
+    ],
+    "hadolint": "DL3042"
+  },
+  {
+    "meaning": "dnf install -y to avoid interaction",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[dnf]",
+      "CMD-[dnf]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[dnf]-ARG-[-y]"
+    ],
+    "hadolint": "DL3038"
+  },
+  {
+    "meaning": "apk add --nocache",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[apk]",
+      "CMD-[apk]-ARG-[add]"
+    ],
+    "q": [
+      "CMD-[apk]-ARG-[--no-cache]"
+    ],
+    "hadolint": "DL3019"
+  },
+  {
+    "meaning": "zypper install -y",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[zypper]",
+      "CMD-[zypper]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[zypper]-ARG-[-y]"
+    ],
+    "hadolint": "DL3034"
+  },
+  {
+    "meaning": "yum install use -y",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[yum]",
+      "CMD-[yum]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[yum]-ARG-[-y]"
+    ],
+    "hadolint": "DL3030"
+  },
+  {
+    "meaning": "apt update must prefix apt install and -y",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[apt-get]-ARG-[-y]"
+    ],
+    "hadolint": "DL3014"
+  },
+  {
+    "meaning": "apt update must prefix apt install and then no install recommends",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[apt-get]-ARG-[--no-install-recommends]"
+    ],
+    "hadolint": "DL3015"
+  }
+]

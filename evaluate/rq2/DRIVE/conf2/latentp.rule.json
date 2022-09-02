@@ -1,0 +1,71 @@
+[
+  {
+    "meaning": "dkpg clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[dpkg]"
+      ],
+      [
+        "SHELL-CMD-[apt-get]",
+        "CMD-[apt-get]-ARG-[install]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[rm]",
+        "CMD-[rm]-ARG-[-rf]",
+        "CMD-[rm]-ARG-[PATH-APT-LIST]"
+      ],
+      [
+        "SHELL-CMD-[apt-get]",
+        "CMD-[apt-get]-ARG-[clean]"
+      ]
+    ],
+    "hadolint": "DL3009"
+  },
+  {
+    "meaning": "dnf clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[dnf]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[dnf]",
+        "CMD-[dnf]-ARG-[clean]",
+        "CMD-[dnf]-ARG-[all]"
+      ]
+    ],
+    "hadolint": "DL3040"
+  },
+  {
+    "meaning": "yum/rpm clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[yum]"
+      ],
+      [
+        "SHELL-CMD-[rpm]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[yum]",
+        "CMD-[yum]-ARG-[clean]",
+        "CMD-[yum]-ARG-[all]"
+      ],
+      [
+        "CMD-[rm]-ARG-[-rf]",
+        "CMD-[rm]-ARG-[PATH-VAR-CACHE-YUM]"
+      ]
+    ],
+    "hadolint": "DL3032"
+  }
+]

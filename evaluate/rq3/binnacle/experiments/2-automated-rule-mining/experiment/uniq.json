@@ -1,0 +1,18 @@
+{ "type": "BASH-ASSIGN", "children": [{ "type": "BASH-ASSIGN-LHS", "children": [] },{ "type": "BASH-ASSIGN-RHS", "children": [] }] }
+{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-PATH-ABSOLUTE", "children": [] },{ "type": "ABS-MAYBE-PATH", "children": [] }] }
+{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-URL-PROTOCOL-HTTPS", "children": [] },{ "type": "ABS-PROBABLY-URL", "children": [] }] }
+{ "type": "SC-APK-ADD", "children": [{ "type": "SC-APK-F-NO-CACHE", "children": [] },{ "type": "SC-APK-PACKAGES", "children": [] }] }
+{ "type": "SC-APT-GET-INSTALL", "children": [{ "type": "SC-APT-GET-F-YES", "children": [] },{ "type": "SC-APT-GET-PACKAGES", "children": [] }] }
+{ "type": "SC-CHMOD", "children": [{ "type": "SC-CHMOD-MODE", "children": [] },{ "type": "SC-CHMOD-PATHS", "children": [{ "type": "SC-CHMOD-PATH", "children": [{ "type": "BASH-LITERAL", "children": [] }] }] }] }
+{ "type": "SC-CHOWN", "children": [{ "type": "SC-CHOWN-OWNER", "children": [{ "type": "BASH-LITERAL", "children": [] }] },{ "type": "SC-CHOWN-PATHS", "children": [{ "type": "SC-CHOWN-PATH", "children": [{ "type": "BASH-LITERAL", "children": [] }] }] }] }
+{ "type": "SC-CHOWN", "children": [{ "type": "SC-CHOWN-OWNER", "children": [] },{ "type": "SC-CHOWN-PATHS", "children": [{ "type": "SC-CHOWN-PATH", "children": [{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-MAYBE-PATH", "children": [] }] }] }] }] }
+{ "type": "SC-CP-PATHS", "children": [{ "type": "SC-CP-PATH", "children": [] },{ "type": "SC-CP-PATH", "children": [{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-MAYBE-PATH", "children": [] }] }] }] }
+{ "type": "SC-FIND", "children": [{ "type": "SC-FIND-NAME", "children": [] },{ "type": "SC-FIND-TARGET", "children": [] }] }
+{ "type": "SC-GPG-VERIFYS", "children": [{ "type": "SC-GPG-VERIFY", "children": [] },{ "type": "SC-GPG-VERIFY", "children": [] }] }
+{ "type": "SC-GROUP-ADD", "children": [{ "type": "SC-GROUP-ADD-GID", "children": [] },{ "type": "SC-GROUP-ADD-GROUP", "children": [] }] }
+{ "type": "SC-LN", "children": [{ "type": "SC-LN-F-SYMBOLIC", "children": [] },{ "type": "SC-LN-TARGET", "children": [] },{ "type": "SC-LN-LINK", "children": [{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-PATH-ABSOLUTE", "children": [] },{ "type": "ABS-MAYBE-PATH", "children": [] }] }] }] }
+{ "type": "SC-MV-PATHS", "children": [{ "type": "SC-MV-PATH", "children": [] },{ "type": "SC-MV-PATH", "children": [{ "type": "BASH-LITERAL", "children": [{ "type": "ABS-MAYBE-PATH", "children": [] }] }] }] }
+{ "type": "SC-PYTHON-ARGS", "children": [{ "type": "SC-PYTHON-ARG", "children": [{ "type": "BASH-LITERAL", "children": [] }] },{ "type": "SC-PYTHON-ARG", "children": [{ "type": "BASH-LITERAL", "children": [] }] }] }
+{ "type": "SC-RM", "children": [{ "type": "SC-RM-F-FORCE", "children": [] },{ "type": "SC-RM-PATHS", "children": [{ "type": "SC-RM-PATH", "children": [] }] }] }
+{ "type": "SC-SED", "children": [{ "type": "SC-SED-F-IN-PLACE", "children": [] },{ "type": "SC-SED-EXPRESSIONS", "children": [{ "type": "SC-SED-EXPRESSION", "children": [{ "type": "BASH-LITERAL", "children": [] }] }] },{ "type": "SC-SED-PATHS", "children": [] }] }
+{ "type": "SC-YUM-INSTALL", "children": [{ "type": "SC-YUM-F-ASSUMEYES", "children": [] },{ "type": "SC-YUM-PACKAGES", "children": [] }] }

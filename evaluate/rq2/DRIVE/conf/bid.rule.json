@@ -1,0 +1,51 @@
+[
+  {
+    "ID": "DRIVE-21",
+    "meaning": "apt update must prefix apt install",
+    "type": "bid",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[update]"
+    ],
+    "q": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[install]"
+    ],
+    "r": [
+      "SHELL-CMD-[rm]"
+    ]
+  },
+  {
+    "ID": "DRIVE-22",
+    "meaning": "go use multistage",
+    "type": "bid",
+    "level": "MUST",
+    "p": [
+      "FROM-IMAGE-[golang]-TAG-[specific]-AS-NAME"
+    ],
+    "q": [
+      "SHELL-CMD-[go]",
+      "CMD-[go]-ARG-[build]"
+    ],
+    "r": [
+      "COPY-FROM[NAME]-[PATH-NORMAL]-[PATH-NORMAL]"
+    ]
+  },
+  {
+    "ID": "DRIVE-23",
+    "meaning": "maven use multistage",
+    "type": "bid",
+    "level": "MUST",
+    "p": [
+      "FROM-IMAGE-[maven]-TAG-[specific]-AS-NAME"
+    ],
+    "q": [
+      "SHELL-CMD-[mvn]",
+      "CMD-[mvn]-ARG-[package]"
+    ],
+    "r": [
+      "COPY-FROM[NAME]-[PATH-NORMAL]-[PATH-NORMAL]"
+    ]
+  }
+]

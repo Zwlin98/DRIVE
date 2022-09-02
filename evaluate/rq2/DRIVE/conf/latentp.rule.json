@@ -1,0 +1,126 @@
+[
+  {
+    "ID": "DRIVE-24",
+    "meaning": "conda clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[conda]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[conda]",
+        "CMD-[conda]-ARG-[clean]"
+      ]
+    ]
+  },
+  {
+    "ID": "DRIVE-25",
+    "meaning": "dkpg clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[dpkg]"
+      ],
+      [
+        "SHELL-CMD-[apt-get]",
+        "CMD-[apt-get]-ARG-[install]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[rm]",
+        "CMD-[rm]-ARG-[-rf]",
+        "CMD-[rm]-ARG-[PATH-APT-LIST]"
+      ],
+      [
+        "SHELL-CMD-[apt-get]",
+        "CMD-[apt-get]-ARG-[clean]"
+      ]
+    ]
+  },
+  {
+    "ID": "DRIVE-26",
+    "meaning": "dnf clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[zypper]",
+        "CMD-[zypper]-ARG-[install]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[zypper]",
+        "CMD-[zypper]-ARG-[clean]"
+      ]
+    ]
+  },
+  {
+    "ID": "DRIVE-27",
+    "meaning": "dnf clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[dnf]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[dnf]",
+        "CMD-[dnf]-ARG-[clean]"
+      ]
+    ]
+  },
+  {
+    "ID": "DRIVE-28",
+    "meaning": "yum/rpm clean cache",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[yum]"
+      ],
+      [
+        "SHELL-CMD-[rpm]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[yum]",
+        "CMD-[yum]-ARG-[clean]"
+      ],
+      [
+        "CMD-[rm]-ARG-[-rf]",
+        "CMD-[rm]-ARG-[PATH-VAR-CACHE-YUM]"
+      ]
+    ]
+  },
+  {
+    "ID": "DRIVE-29/30",
+    "meaning": "verify the download file",
+    "level": "MUST",
+    "type": "latent_p->q",
+    "latent_p": [
+      [
+        "SHELL-CMD-[wget]"
+      ],
+      [
+        "SHELL-CMD-[curl]"
+      ]
+    ],
+    "q": [
+      [
+        "SHELL-CMD-[sha256sum]"
+      ],
+      [
+        "SHELL-CMD-[gpg]"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "ID": "DRIVE-01",
+    "meaning": "apk add --nocache",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[apk]",
+      "CMD-[apk]-ARG-[add]"
+    ],
+    "q": [
+      "CMD-[apk]-ARG-[--no-cache]"
+    ]
+  },
+  {
+    "ID": "DRIVE-02",
+    "meaning": "pip install MUST use --no-cache-dir to avoid wasting space",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[pip]",
+      "CMD-[pip]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[pip]-ARG-[--no-cache-dir]"
+    ]
+  },
+  {
+    "ID": "DRIVE-03",
+    "meaning": "pip install should use REQUIREMENT.TXT to lock the version",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[pip]",
+      "CMD-[pip]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[pip]-ARG-[-r]",
+      "CMD-[pip]-ARG-[FILE-PIP-REQUIREMENT.TXT]"
+    ]
+  },
+  {
+    "ID": "DRIVE-04",
+    "meaning": "curl use arg -f",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[curl]"
+    ],
+    "q": []
+  },
+  {
+    "ID": "DRIVE-05",
+    "meaning": "curl should with https",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[curl]"
+    ],
+    "q": [
+      "CMD-[curl]-ARG-[URL-PROTOCOL-HTTPS]"
+    ]
+  },
+  {
+    "ID": "DRIVE-06",
+    "meaning": "wget should with https",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[wget]"
+    ],
+    "q": [
+      "CMD-[wget]-ARG-[URL-PROTOCOL-HTTPS]"
+    ]
+  },
+  {
+    "ID": "DRIVE-07",
+    "meaning": "git clone https",
+    "type": "p->q",
+    "level": "SHOULD",
+    "p": [
+      "SHELL-CMD-[git]",
+      "CMD-[git]-ARG-[clone]"
+    ],
+    "q": [
+      "CMD-[git]-ARG-[URL-PROTOCOL-HTTPS]"
+    ]
+  },
+  {
+    "ID": "DRIVE-08",
+    "meaning": "unzip than remove",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[unzip]",
+      "CMD-[unzip]-ARG-[FILE-ZIP]"
+    ],
+    "q": [
+      "SHELL-CMD-[rm]",
+      "CMD-[rm]-ARG-[FILE-ZIP]"
+    ]
+  },
+  {
+    "ID": "DRIVE-09",
+    "meaning": "tar than remove",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[tar]",
+      "CMD-[tar]-ARG-[FILE-TAR-GZ]"
+    ],
+    "q": [
+      "SHELL-CMD-[rm]"
+    ]
+  },
+  {
+    "ID": "DRIVE-10",
+    "meaning": "gpg verify use --batch",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[gpg]"
+    ],
+    "q": [
+      "CMD-[gpg]-ARG-[--batch]"
+    ]
+  },
+  {
+    "ID": "DRIVE-11",
+    "meaning": "gpg verify use --keyserver",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[gpg]"
+    ],
+    "q": [
+    ]
+  },
+  {
+    "ID": "DRIVE-12",
+    "meaning": "gpg verify",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[gpg]",
+      "CMD-[gpg]-ARG-[--verify]",
+      "CMD-[gpg]-ARG-[FILE-ASC]"
+    ],
+    "q": [
+      "SHELL-CMD-[rm]",
+      "CMD-[rm]-ARG-[FILE-ASC]"
+    ]
+  },
+  {
+    "ID": "DRIVE-13",
+    "meaning": "dnf install -y to avoid interaction",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[dnf]",
+      "CMD-[dnf]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[dnf]-ARG-[-y]"
+    ]
+  },
+  {
+    "ID": "DRIVE-14",
+    "meaning": "mkdir should with -p",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[mkdir]"
+    ],
+    "q": [
+      "CMD-[mkdir]-ARG-[-p]",
+      "CMD-[mkdir]-ARG-[PATH-NORMAL]"
+    ]
+  },
+  {
+    "ID": "DRIVE-15",
+    "meaning": "chown should with -r",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[chown]"
+    ],
+    "q": [
+      "CMD-[chown]-ARG-[-R]",
+      "CMD-[chown]-ARG-[PATH-NORMAL]"
+    ]
+  },
+  {
+    "ID": "DRIVE-16",
+    "meaning": "rm should using with -rf",
+    "level": "SHOULD",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[rm]"
+    ],
+    "q": [
+      "CMD-[rm]-ARG-[-rf]"
+    ]
+  },
+  {
+    "ID": "DRIVE-17",
+    "meaning": "yum install use -y",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[yum]",
+      "CMD-[yum]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[yum]-ARG-[-y]"
+    ]
+  },
+  {
+    "ID": "DRIVE-18",
+    "meaning": "zypper install -y",
+    "level": "MUST",
+    "type": "p->q",
+    "p": [
+      "SHELL-CMD-[zypper]",
+      "CMD-[zypper]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[zypper]-ARG-[-y]"
+    ]
+  },
+  {
+    "ID": "DRIVE-19",
+    "meaning": "apt install -y",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[apt-get]-ARG-[-y]"
+    ]
+  },
+  {
+    "ID": "DRIVE-20",
+    "meaning": "apt install no install recommends",
+    "type": "p->q",
+    "level": "MUST",
+    "p": [
+      "SHELL-CMD-[apt-get]",
+      "CMD-[apt-get]-ARG-[install]"
+    ],
+    "q": [
+      "CMD-[apt-get]-ARG-[--no-install-recommends]"
+    ]
+  }
+]
